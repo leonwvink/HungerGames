@@ -29,7 +29,7 @@ public class Arena {
             }
             Player player = new Player(i, gender, district);
             playerList.add(player);
-            System.out.println(player.getName() + " " + player.getAttack() + " " + player.getHealth() + " " + player.getGender());
+            System.out.println("Player " + player.getName() + " has entered the ArenA!");
         }
     }
 
@@ -55,18 +55,21 @@ public class Arena {
         LocChange locChange = new LocChange();
 
         while (gameOn == true) {
+
             locChange.changeLocation(playerList);
             locChange.checkLocation(playerList);
 
             for (int i=0; i<=playerList.size()-1; i++) {
                 if (playerList.get(i).isAlive() == false){
+                    playerList.remove(playerList.get(i));
                     deadCount = deadCount + 1;
                 }
             }
             if (deadCount == 23){
                 gameOn = false;
-                System.out.println("wuuuhuuu " + playerList.get(0).getName() + " won!! Ah shit and he just got killed also... Why?!");
+                System.out.println("wuuuhuuu " + playerList.get(0).getName() + " won with stil " + playerList.get(0).getHealth() + " life ponts left!! Ah shit and he just got killed also... Why?!");
             }
+
 
 
         }

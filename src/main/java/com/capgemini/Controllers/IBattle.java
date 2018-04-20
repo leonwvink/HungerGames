@@ -15,12 +15,12 @@ public class IBattle {
 
             //Player2 attacks Player1. Advantages are BattleItem and higher attack
             if (player1.isBattleItem() == true){
-                attack = 1.8;
+                attack = 2;
             } else { attack = 1;}
 
             if (player2.getDefence() - player1.getAttack() >=0) {
                 // defence player2 bigger attack player1 -> 1 plus ratio
-                power = 1+ ( player2.getDefence() - player1.getAttack() ) / (player2.getDefence() + player1.getAttack());
+                power = 1 + ( player2.getDefence() - player1.getAttack() ) / (player2.getDefence() + player1.getAttack());
             } else {
                 // defence player 2 smaller attack player1 ->
                 power = 2 + ((player2.getDefence() - player1.getAttack()) / ((player2.getDefence() + player1.getAttack()) ));
