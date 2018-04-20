@@ -1,39 +1,19 @@
 package com.capgemini;
 
+import com.capgemini.Models.Arena;
 import com.capgemini.Models.Player;
+
+import static sun.audio.AudioPlayer.player;
 
 /**
  * Hello world!
- *
  */
-public class App 
-{
+public class App {
 
 
-    private static boolean district;
-    private static String gender;
+    public static void main(String[] args) {
+        Arena startGame = new Arena();
+        startGame.createPlayers();
 
-    public static void main( String[] args ) {
-
-        for (int i = 1; i <= 24; i++) {
-            if (i % 4 == 0) {
-                district = true;
-            } else {
-                district = false;
-            }
-        if (i <= 12) {
-            gender = "male";
-        } else {
-            gender = "female";
-        }
-        Player player = new Player(i, gender, district);
-            System.out.println(player.getName() + " " + player.getAttack() + " " + player.getHealth() + " " + player.getGender());
-        }
-
-
-
-
-
-        System.out.println(  );
     }
 }
