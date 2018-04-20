@@ -1,7 +1,7 @@
 package com.capgemini.Models;
 
 public class Player {
-
+    private int name;
     private boolean isAlive = true;
     private int health = 100;
     private String gender;
@@ -11,7 +11,8 @@ public class Player {
     private boolean isDistrict;
 
 
-    public Player(String gender, boolean isDistrict) {
+    public Player(int name, String gender, boolean isDistrict) {
+        this.name = name;
         this.gender = gender;
         this.isDistrict = isDistrict;
         if (isDistrict == true) {
@@ -21,6 +22,14 @@ public class Player {
             this.attack = attack * 1.4;
         }
 
+    }
+
+    public int getName() {
+        return name;
+    }
+
+    public void setName(int name) {
+        this.name = name;
     }
 
     public boolean isAlive() {
