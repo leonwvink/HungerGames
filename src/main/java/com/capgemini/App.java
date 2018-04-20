@@ -15,7 +15,8 @@ public class App {
     public static void main(String[] args) {
         Arena startGame = new Arena();
         startGame.createPlayers();
-        startGame.fight();
+        //startGame.fight();
+        startGame.gameOn();
 
 
 

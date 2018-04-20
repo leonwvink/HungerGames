@@ -9,6 +9,8 @@ public class Player {
     private double defence = 50;
     private boolean battleItem = false;
     private boolean isDistrict;
+    private int locX;
+    private int locY;
 
 
     public Player(int name, String gender, boolean isDistrict) {
@@ -25,6 +27,8 @@ public class Player {
         }
         this.attack = (int) (Math.random()*attack);
         this.defence = (int)  (Math.random()*defence);
+        this.locX =(int) Math.random() *100;
+        this.locY = (int) Math.random() *100;
 
     }
 
@@ -90,5 +94,21 @@ public class Player {
 
     public void setDistrict(boolean district) {
         isDistrict = district;
+    }
+
+    public int getLocX() {
+        return locX;
+    }
+
+    public void setLocX(int locX) {
+        this.locX = locX;
+    }
+
+    public int getLocY() {
+        return locY;
+    }
+
+    public void setLocY(int locY) {
+        this.locY = locY;
     }
 }
