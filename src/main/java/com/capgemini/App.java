@@ -1,5 +1,6 @@
 package com.capgemini;
 
+import com.capgemini.Controllers.IBattle;
 import com.capgemini.Models.Arena;
 import com.capgemini.Models.Player;
 
@@ -14,6 +15,9 @@ public class App {
     public static void main(String[] args) {
         Arena startGame = new Arena();
         startGame.createPlayers();
+        startGame.fight();
+
+
 
     }
 }

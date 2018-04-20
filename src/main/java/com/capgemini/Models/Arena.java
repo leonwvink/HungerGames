@@ -1,5 +1,7 @@
 package com.capgemini.Models;
 
+import com.capgemini.Controllers.IBattle;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,7 @@ public class Arena {
     private static boolean district;
     private static String gender;
     private List<Player> playerList = new ArrayList<>();
+    private double whoHits;
 
     public void createPlayers() {
         for (int i = 1; i <= 24; i++) {
@@ -28,5 +31,20 @@ public class Arena {
     }
 
 
-    
+    public void fight() {
+        IBattle battle = new IBattle();
+
+        while (playerList.get(21).isAlive() == true && playerList.get(23).isAlive() == true){
+            whoHits = Math.random();
+            if (whoHits > 0.5) {
+                battle.battle(playerList.get(21), playerList.get(23));
+            } else {
+                battle.battle(playerList.get(23), playerList.get(21));
+            }
+        }
+
+    }
+
+
+
 }

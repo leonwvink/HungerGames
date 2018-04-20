@@ -6,7 +6,7 @@ public class Player {
     private int health = 100;
     private String gender;
     private double attack = 100;
-    private double defence = 100;
+    private double defence = 50;
     private boolean battleItem = false;
     private boolean isDistrict;
 
@@ -15,12 +15,16 @@ public class Player {
         this.name = name;
         this.gender = gender;
         this.isDistrict = isDistrict;
+        // defence bonus due to the drive
         if (isDistrict == true) {
-            this.defence = defence * 1.4;
+            this.defence = defence * 1.3;
         } else {
+            // attack bonus due to the training. Got sword also.
             this.battleItem = true;
-            this.attack = attack * 1.4;
+            this.attack = attack * 1.8;
         }
+        this.attack = (int) (Math.random()*attack);
+        this.defence = (int)  (Math.random()*defence);
 
     }
 
